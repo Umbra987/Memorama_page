@@ -51,24 +51,52 @@ header{
 
 
 .container {
-    background: url("img/background.png");
-    background-color: black;
-    background-size: cover;
-    height: 100vh;
-    background-position: center center;
+    background: url("img/estrellas-bg.png"),url("img/background.png");
+    background-color: #F2D272  ;
+    background-size: auto 300px, cover;
+    background-repeat: repeat-x, no-repeat;
+    background-blend-mode: normal, multiply;
+    width: 100%;
+}
+.container{
+    padding: 1rem;
+    min-height: calc(100vh - 130px - 110px);
+    margin: 0 auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .tablero{
     display: flex;
-    margin-left: 20%;
-    width: 80%;
-    height: 80%;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 5%;
+    width: 100%;
+    height: 100%;
+}
+.carta{
+    width: 180px;
+    height: 180px;
+    background:url("img/tarjeta_cubierta.png");
+    background-size: cover;
+    align-items: center;
 }
 
-.carta{
-    float: right;
-    width: 15vw;
-    height: 20vh;
-    background-color: yellow;
-    margin:20px 20px;
-    border: 2px solid white;
+img {
+    border-style: none;
+    vertical-align: middle;
+}
+
+.redes{
+    display: flex;
+    flex-flow: column;
+    background-color: black;
+}
+
+.redes a{
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
 }
