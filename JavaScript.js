@@ -23,7 +23,7 @@ let imagenes = [
 ];
 
 //Generación aleatoria de las iamgenes en el tablero.
-var cadena_pos_imaganes =[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+var cadena_pos_imaganes =[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
 var cadena = ['X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X'];
 function mezclador_tarjetas(a){ 
       random = Math.floor(Math.random()*16);
@@ -34,8 +34,25 @@ function mezclador_tarjetas(a){
          mezclador_tarjetas(a+1);
          }
          else mezclador_tarjetas(a);
-   
-
          }
 }
 mezclador_tarjetas(0);
+
+
+function insertadorImg (){
+   for(var i=0;i<16;i++){
+      document.querySelector('.cart' + i).innerHTML="<img src="+imagenes[cadena[i]]+">";
+   }
+}
+insertadorImg();
+
+//------tablero-----------
+let tablero = document.querySelectorAll(".carta");
+
+tablero.forEach(carta=>carta.addEventListener('click',(evento)=>{
+   console.log(evento);
+   console.log(evento.path[1]);
+}));                                                                                                                                                                                                                        
+
+
+//----------------------------------------------------------------------
