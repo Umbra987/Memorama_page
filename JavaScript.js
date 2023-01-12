@@ -48,7 +48,16 @@ function mezclador_tarjetas(a){
 }
 mezclador_tarjetas(0);
 
-
+/*Creacion del tablero al insertar img a los diferentes hijos donde la carta front_card 
+tendra la tarjeta cubierta y la  carta back_card tendra la carta descubierta.
+*/
+function createTab(){
+   for(var i=0;i<16;i++){
+      document.querySelector(".cart"+ i).firstElementChild.innerHTML="<img src="+"img/tarjeta_cubierta.png"+">";
+      document.querySelector(".cart"+ i).lastElementChild.innerHTML="<img src="+imagenes[cadena[i]]+">";
+   }
+}
+createTab();
 //------tablero de cartas-----------
 let carta0 = document.querySelector(".cart0");
 let carta1 = document.querySelector(".cart1");
@@ -275,7 +284,7 @@ function verificar(){
       }
       else{
          setTimeout(()=>{
-           if(cadena[click1]!='X')tab[click1].innerHTML="<img src="+"img/tarjeta_cubierta.png"+">";
+           if(cadena[click1]!='X')tab[click1].ninerHTML="<img src="+"img/tarjeta_cubierta.png"+">";
            if(cadena[click2]!='X')tab[click2].innerHTML="<img src="+"img/tarjeta_cubierta.png"+">";
            click1,click2=null;
             contClick=1;
