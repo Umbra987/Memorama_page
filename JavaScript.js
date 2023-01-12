@@ -51,15 +51,19 @@ createTab();
 
 /*
 function MostarTablero(){
-   intervalo=0.2;
+   
    for(var i=0;i<16;i++){
+      let cartaMostrar = document.querySelector(".cart" + i);
       setTimeout(() => {
-         document.querySel
-      },"500");
+         cartaMostrar.classList.toggle("none");
+      },200 + (150*i));
+      
+      setTimeout(() => {
+         cartaMostrar.classList.add("cardAnimation");
+      },200 + (150*i));
    }
 }
 */
-MostarTablero();
 //  Tablero de cartas
 let carta0 = document.querySelector(".cart0");
 let carta1 = document.querySelector(".cart1");
@@ -150,7 +154,7 @@ function verificar(){
             click1,click2=null;
             contClick=1;
             onclik=true;
-         },"450");
+         },"500");
          
       }
    }
