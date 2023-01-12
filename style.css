@@ -80,30 +80,55 @@ header{
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 800px;
     margin: 5%;
     width: 100%;
     height: 100%;
 }
 #tablero .carta{
-    width: 25vh;
-    height: 25vh;
+    width: 23%;
+    height: 23%;
     cursor: pointer;
+    justify-content:space-between ;
+    background-color: transparent;
+    perspective: 1000px;
 }
 
-.carta img{
+#tablero .carta .padre{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.rotation{
+    transform: rotateY(180deg);
+}
+
+#tablero .carta .padre img{
     width: 100%;
     height: 100%;
 }
 
-.front_card{
-    z-index: 10;
+#tablero .carta .front_card,.back_card{
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
 }
 
-.back_card{
-    z-index: 0;
+#tablero .carta .front_card{
+    background-color: transparent;
 }
+
+#tablero .carta .back_card{
+    margin-top: -100%;
+    background-color: transparent;
+    transform: rotateY(180DEG);
+}
+
 
 img{
     border-style: none;
