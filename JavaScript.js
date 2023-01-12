@@ -16,10 +16,9 @@ let imagenes = [
    "img/parejas-007.png",//Imagen de Pastor
    "img/parejas-008.png",//Imagen de la mula y el buey
 ];
-let tab = Array.from(document.querySelectorAll('.carta'));
-console.log(tab);
 //Los clicks llevaran el número de tarjeta en el que fue seleccionado.
-var click1,click2;
+let click1,click2;
+let onclik=true;
 //contador de click para contar los dos
 let contClick=1;
 //contador de las parejas
@@ -49,6 +48,18 @@ function createTab(){
    }
 }
 createTab();
+
+/*
+function MostarTablero(){
+   intervalo=0.2;
+   for(var i=0;i<16;i++){
+      setTimeout(() => {
+         document.querySel
+      },"500");
+   }
+}
+*/
+MostarTablero();
 //  Tablero de cartas
 let carta0 = document.querySelector(".cart0");
 let carta1 = document.querySelector(".cart1");
@@ -86,27 +97,32 @@ carta14.addEventListener('click',()=>{CartUp(14);});
 carta15.addEventListener('click',()=>{CartUp(15);});
 
 function CartUp(valor){
-   if(document.querySelector(".cart"+valor).classList.contains('rotation')==true){
+   if(onclik==false){
       return;
    }
-   if(contClick==1 && cadena[valor]!='X'){
-      click1=valor;
-      document.querySelector(".cart"+valor).classList.add("rotation");
-      contClick++;
-   }
-   else if(contClick==2 && click1!=valor && cadena[valor]!='X') {
-      click2=valor;
-      document.querySelector(".cart"+valor).classList.add("rotation");
-      verificar();
-   }
-   else if(click1==valor){
-      click1,click2=null;
-      contClick=1;
-   }
    else{
-      click1,click2=null;
-      contClick=1;
-      document.querySelector(".cart"+valor).classList.remove("rotation");
+      if(document.querySelector(".cart"+valor).classList.contains('rotation')==true){
+      return;
+   }
+      if(contClick==1 && cadena[valor]!='X'){
+         click1=valor;
+         document.querySelector(".cart"+valor).classList.add("rotation");
+         contClick++;
+      }
+      else if(contClick==2 && click1!=valor && cadena[valor]!='X') {
+         click2=valor;
+         document.querySelector(".cart"+valor).classList.add("rotation");
+         verificar();
+      }
+      else if(click1==valor){
+         click1,click2=null;
+         contClick=1;
+      }
+      else{
+         click1,click2=null;
+         contClick=1;
+         document.querySelector(".cart"+valor).classList.remove("rotation");
+      }
    }
    }
 //    Funcion que va a verificar si es par o no
@@ -116,6 +132,8 @@ function verificar(){
       console.log("Se acabo el juego.");
    }
    else if(parejas<7){
+      onclik=false;
+      console.log("click apagado");
       if(cadena[click1] == cadena[click2]){
          cadena[click1]='X';
          cadena[click2]='X';
@@ -123,6 +141,7 @@ function verificar(){
          contClick=1;
          parejas++;
          console.log("parejas encontradas:"+parejas);
+         onclik=true;
       }
       else{
          setTimeout(()=>{
@@ -130,8 +149,18 @@ function verificar(){
             document.querySelector(".cart"+click2).classList.remove("rotation");
             click1,click2=null;
             contClick=1;
-         },"600");
+            onclik=true;
+         },"450");
          
       }
    }
+   
 }
+//   Intro
+let btnempezar = document.querySelector(".start_buttom");
+let modal_intro=document.querySelector(".containerIntro");
+let cuerpo = document.querySelector("body");
+btnempezar.addEventListener('click',()=>{
+   cuerpo.style.overflow="auto";
+   modal_intro.style.display = "none";
+});
