@@ -86,23 +86,22 @@ header{
     width: 100%;
     height: 100%;
 }
-.carta{
-    width: 180px;
-    height: 180px;
-    background:url("img/tarjeta_cubierta.png");
+#tablero .carta{
+    width: 25vh;
+    height: 25vh;
+    background-image:url("img/tarjeta_cubierta.png");
     background-size: cover;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
 }
 
 .carta img{
     width: 100%;
     height: 100%;
-    opacity: 0;
 }
 
-img {
+
+
+img{
     border-style: none;
     vertical-align: middle;
 }
