@@ -155,7 +155,7 @@ function CartUp(valor){
       else if(contClick==2 && click1!=valor && cadena[valor]!='X') {
          click2=valor;
          document.querySelector(".cart"+valor).classList.add("rotation");
-         verificar();
+         setTimeout(()=>{verificar();},1000);
       }
       else if(click1==valor){
          click1,click2=null;
