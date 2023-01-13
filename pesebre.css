@@ -20,9 +20,10 @@
 
 .tablaPesebre{
     display: flex;
+    flex-direction: row;
     align-items: stretch;
-    width: 70%;
-    height: 50%;
+    width: 900px;
+    height: 400px;
     background: url("img/estrellas-bg.png"),url("img/background.png");
     background-color: #F2D272  ;
     background-size: auto 300px, cover;
@@ -31,6 +32,19 @@
     border: 8px solid #ffc042;
     border-radius: 15px;
 }
+@media (max-width: 900px){
+    .tablaPesebre{
+        width: 700px;
+        height: 300px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    p{
+        font-size: 15px;
+    }
+}
+
 /*Columna derecha*/
 .tablaPesebre .textPesebre{
     width: 30%;
@@ -74,7 +88,6 @@
     width: 70%;
     background:url("img/escena-pesebre.png");
     background-position: center;
-	background-attachment: contain;
 	background-size: cover;
 }
 
