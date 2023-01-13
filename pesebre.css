@@ -1,0 +1,300 @@
+.none{
+    display: "none";
+}
+
+.containerPesebre{
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.562);
+    z-index: 10;
+}
+
+.nonePesebre{
+    display: none;
+}
+
+.tablaPesebre{
+    display: flex;
+    align-items: stretch;
+    width: 70%;
+    height: 50%;
+    background: url("img/estrellas-bg.png"),url("img/background.png");
+    background-color: #F2D272  ;
+    background-size: auto 300px, cover;
+    background-repeat: repeat-x, no-repeat;
+    background-blend-mode: normal, multiply;
+    border: 8px solid #ffc042;
+    border-radius: 15px;
+}
+/*Columna derecha*/
+.tablaPesebre .textPesebre{
+    width: 30%;
+    font-size: 18px;
+    padding: 10px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image: url("img/cinta.png"), url("img/bola.png");
+    background-size: 18%, 30%;
+    background-position: top 7% left 4%, top right -5%;
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
+    position: relative;
+}
+
+.titleText{
+    font-family: 'Arlon', sans-serif;
+    font-weight: bold;
+    color:#BC3D2E;
+    user-select: none;
+    text-align: center;
+}
+
+.bodyText{
+    height: auto;
+    user-select: none;
+    text-align:left;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding-top: 5px;
+    word-wrap: break-word;
+    font-family: sans-serif;
+}
+/*Columna izquierda */
+.tablaPesebre .imgPesebre{
+    position: relative;
+    float: left;
+    width: 70%;
+    background:url("img/escena-pesebre.png");
+    background-position: center;
+	background-attachment: contain;
+	background-size: cover;
+}
+
+
+img{
+        border-style: none;
+        vertical-align: middle;
+    }
+.maria{
+    position: absolute;
+    left: 1.4%;
+    top: 43.8%;
+    width: 26.6%;
+    height: 56.4%;
+}
+
+.jose{
+    position: absolute;
+    left: 4.8%;
+    top: 16.6%;
+    width: 16.3%;
+    height: 69.8%;
+}
+
+.baltazar{
+    position: absolute;
+    left: 25.3%;
+    top: 5.4%;
+    width: 17.7%;
+    height: 73%;
+}
+
+.jesus{
+    position: absolute;
+    left: 26.4%;
+    top: 73.2%;
+    width: 21.5%;
+    height: 28.8%;
+}
+
+.melchor{
+    position: absolute;
+    left: 46.5%;
+    top: 39.3%;
+    width: 30%;
+    height: 51.2%
+}
+
+.gaspar{
+    position: absolute;
+    left: 40.5%;
+    top: 10.4%;
+    width: 19.7%;
+    height: 73%;
+}
+
+.mulaBuey{
+    position: absolute;
+    left: 80%;
+    top: 40%;
+    width: 20%;
+    height: 60.2%;
+}
+
+.pastor{
+    position: absolute;
+    left: 68.8%;
+    top: 15%;
+    width: 19.8%;
+    height: 70%;
+}
+
+.containerPesebre .Pesebre_buttom{
+    bottom: 5%;
+    left: 22%;
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    margin-top: 6%;
+    background-color: rgb(255, 123, 0);
+    border: 2px solid rgba(173, 87, 7, 0.592);
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0px 5px rgb(255, 123, 0);
+}
+
+.Pesebre_buttom:hover{
+    transform: translateY(5px);
+    box-shadow: 0px 2px rgb(255, 123, 0);
+    cursor: pointer;
+}
+
+
+.animationActive{
+    animation: byeCard 3.5s ease-in-out;
+}
+
+@keyframes byeCard {
+    0%{
+        transform: rotate(10deg);
+    }
+    25%{
+        transform: rotate(-10deg);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+    75%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: translateY(700px);
+    }
+}
+
+.noneFinal{
+    display: none;
+}
+
+.bodyText_Final{
+    height: auto;
+    user-select: none;
+    text-align:left;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding-top: 2px;
+    word-wrap: break-word;
+    font-family: sans-serif;
+}
+
+.bodyText_Final img{
+    width: 50%;
+}
+.reset{
+    bottom: 5%;
+    left: 22%;
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    max-height: 10%;
+    margin-top: 6%;
+    background-color: rgb(255, 0, 0);
+    border: 2px solid rgba(241, 6, 6, 0.592);
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0px 5px rgba(241, 6, 6, 0.592);
+}
+
+.reset:hover{
+    transform: translateY(5px);
+    box-shadow: 0px 2px rgba(241, 6, 6, 0.592);
+    cursor: pointer;
+}
+
+.finalizar{
+    display: none;
+    bottom: 5%;
+    left: 22%;
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    margin-top: 6%;
+    background-color: rgb(255, 123, 0);
+    border: 2px solid rgba(173, 87, 7, 0.592);
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0px 5px rgb(255, 123, 0);
+}
+
+.finalizar:hover{
+    transform: translateY(5px);
+    box-shadow: 0px 2px rgb(255, 123, 0);
+    cursor: pointer;
+}
+
+.footer_final{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.copo1{
+    position: absolute;
+    width: 9%;
+    left: 5%;
+    bottom: 5%;
+    animation: copoAnimation 3s alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+.copo2{
+    position: absolute;
+    width: 9%;
+    right: 5%;
+    bottom: 5%;
+    animation: copoAnimation 3s alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+@keyframes copoAnimation{
+    0%{
+        transform: rotate(360deg);
+    }
+    25%{
+        transform: rotate(-360deg);
+    }
+    50%{
+        transform: rotate(360deg);
+    }
+    75%{
+        transform: rotate(-360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
