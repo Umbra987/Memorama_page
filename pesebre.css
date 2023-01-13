@@ -269,9 +269,19 @@ img{
 }
 .bodyText_Final img{
     margin-top: 5px;
+    margin-left: 25%;
+    width: 150px;
+    max-width: 250px;
+
+}
+/*  Cambio en la distancia de desplazamiento del logo en el .body_Final*/
+@media (max-width=800px) {
+    .bodyText_Final img{
+    margin-top: 5px;
     margin-left: 40%;
     width: 150px;
     max-width: 250px;
+}
 }
 /*Boton de la parte final que permite hacer un reload de la pagina*/
 .reset{

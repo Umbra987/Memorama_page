@@ -60,9 +60,9 @@ function mezclador_tarjetas(a){
          cadena[a]=cadena_pos_imaganes[random];
          cadena_pos_imaganes[random]= 'X';
          mezclador_tarjetas(a+1);
-         }
+         }//fin if
          else mezclador_tarjetas(a);
-         }
+         }//fin if
 }
 mezclador_tarjetas(0);
 /*
@@ -161,7 +161,7 @@ function CartUp(valor){
       else if(contClick==2 && click1!=valor && cadena[valor]!='X') {
          click2=valor;
          document.querySelector(".cart"+valor).classList.add("rotation");
-         setTimeout(()=>{verificar();},300);
+         setTimeout(()=>{verificar();},600);
       }//fin if
       else if(click1==valor){
          click1,click2=null;
