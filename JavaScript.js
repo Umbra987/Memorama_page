@@ -110,6 +110,7 @@ let carta14 = document.querySelector(".cart14");
 let carta15 = document.querySelector(".cart15");
 
 //Asignacion de valor del click respecto a la carta seleccionada.
+//pendiente documentar
 carta0.addEventListener('click',()=>{CartUp(0);});
 carta1.addEventListener('click',()=>{CartUp(1);});
 carta2.addEventListener('click',()=>{CartUp(2);});
@@ -208,7 +209,7 @@ function verificar(){
          playAudio('correcta');
          window.scroll(0,0);
          cuerpo.style.overflow="hidden";
-         parejaFind(cadena[click1]);
+         setTimeout(()=>{parejaFind(cadena[click1]);
          cadena[click1]='X';
          cadena[click2]='X';
          click1,click2=null;
@@ -216,16 +217,15 @@ function verificar(){
          parejas++;
          console.log("parejas encontradas:"+parejas);
          onclik=true;
+      },300);
       }//fin if
       else{
-         setTimeout(()=>{
-            playAudio('incorrecta');
+         playAudio('incorrecta');
             document.querySelector(".cart"+click1).classList.remove("rotation");
             document.querySelector(".cart"+click2).classList.remove("rotation");
             click1,click2=null;
             contClick=1;
             onclik=true;
-         },"800");
       }//fin else
    }//fin if   
 }//fin function
