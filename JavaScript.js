@@ -152,28 +152,28 @@ function CartUp(valor){
    else{
       if(document.querySelector(".cart"+valor).classList.contains('rotation')==true){
       return;
-   }
+   }//fin if
       if(contClick==1 && cadena[valor]!='X'){
          click1=valor;
          document.querySelector(".cart"+valor).classList.add("rotation");
          contClick++;
-      }
+      }//fin if
       else if(contClick==2 && click1!=valor && cadena[valor]!='X') {
          click2=valor;
          document.querySelector(".cart"+valor).classList.add("rotation");
          setTimeout(()=>{verificar();},300);
-      }
+      }//fin if
       else if(click1==valor){
          click1,click2=null;
          contClick=1;
-      }
+      }//fin if
       else{
          click1,click2=null;
          contClick=1;
          document.querySelector(".cart"+valor).classList.remove("rotation");
-      }
-   }
-   }
+      }//fin else
+   }//fin else
+   }//fin function
 /*    
    Funcion que va a verificar si es par o 
    Esta función lo que hace es recibir los dos  valores de los clicks "click1" y "click2"
@@ -201,7 +201,7 @@ function verificar(){
          onclik=true;
       document.querySelector(".finalizar").style.display="inline";
       document.querySelector(".Pesebre_buttom").style.display="none";
-   }
+   }//fin if
    else if(parejas<7){
       onclik=false;
       if(cadena[click1] == cadena[click2]){
@@ -216,9 +216,8 @@ function verificar(){
          parejas++;
          console.log("parejas encontradas:"+parejas);
          onclik=true;
-      }
+      }//fin if
       else{
-         
          setTimeout(()=>{
             playAudio('incorrecta');
             document.querySelector(".cart"+click1).classList.remove("rotation");
@@ -227,11 +226,10 @@ function verificar(){
             contClick=1;
             onclik=true;
          },"800");
-         
-      }
-   }
-   
-}
+      }//fin else
+   }//fin if   
+}//fin function
+
 //   Intro
 /* Este seria la desactivacion del intro atra vez de un boton que su accion es
    apagar el display del div "containerIntro"
