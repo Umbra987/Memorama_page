@@ -1,5 +1,11 @@
+/*
+Author: Ing(c) Daniel Rico Palacio
+primer Bootcamp "piscina-42" UTP sobre fullstack
+Date:2023-01-13
+Technologic University of Pereira
+*/
 //Cuando se abra la pagina se ubicara en el inicio de la pagina
-window.scrollTo(0,0);
+window.onbeforeunload = function (){window.scrollTo(0,0);}
 /*
 Esta funcion flecha lo que hace es que nos va a servir  para reproducir ciertos audios que son necesarios
 dependiendo de lo que suceda en el juego por ejemplo el audio de una pareja o el audio del final.
@@ -345,6 +351,9 @@ function parejaFind(valor){
    }
 }
 
+/* Le asignamos al boton .finalizar para que muestre el pescebre final cambiando el titulo ,apagando el mismo boton .finalizar y el cuerpo .bodyText para luego remover la clase noneFinal 
+haciendo que su display se encienda.
+*/
 let finalizar = document.querySelector(".finalizar");
 finalizar.addEventListener("click",()=>{
    titleText.innerHTML="<h2>Armaste tu pesebre</h2>";
@@ -353,7 +362,9 @@ finalizar.addEventListener("click",()=>{
    bodyText.style.display="none";
    finalizar.style.display="none";
 });
-
+/*
+Asignación al boton .reset para recargar la pagina y volver a empezar el juego. 
+ */
 let Again = document.querySelector(".reset");
 Again.addEventListener("click",()=>{
    location.reload();

@@ -1,3 +1,9 @@
+<!--
+Author: Ing(c) Daniel Rico Palacio
+primer Bootcamp "piscina-42" UTP sobre fullstack
+Date:2023-01-13
+Technologic University of Pereira
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +37,7 @@
             <div class="textPesebre">
                 <div class="titleText"><h2>Sabias que...</h2></div>
                 <div class="bodyText"></div>
-                <div class=" bodyText_Final noneFinal"><p>Y junto con la esperanza de la llegada del Niño Dios te deseamos de todo corazón que ese regalo que tanto has anhelado llegue a ti en esta navidad.<br><br>Felices fiestas te desea:Escuala Didactica</p></div>
+                <div class=" bodyText_Final noneFinal"><p>Y junto con la esperanza de la llegada del Niño Dios te deseamos de todo corazón que ese regalo que tanto has anhelado llegue a ti en esta navidad.<br><br>Felices fiestas te desea:</p><img src="img/logoEscuelDidactica.png"></div>
                 <img src="img/copo.png" class="copo1">
                 <img src="img/copo.png" class="copo2">
                 <button class="Pesebre_buttom">Continuar</button>
@@ -47,6 +53,7 @@
     </div>
 
     <header>
+        <!--En el header se encuentra el logo de escuela didactica y el texto de-->
         <div class='logo'>
             <img src="img/logoEscuelDidactica.png">
         </div>
@@ -64,6 +71,7 @@
     </header>
     
     <section class="container">
+        <!--Contenedor de las redes antes del responsive-->
         <div class="redes">
             <a href="https://twitter.com/intent/tweet?text=&url=https://www.escueladidactica.com/navidad/2022" target="_blank"><img src="img/sharedTwitter.png" title="Compartir con Twitter"></a>
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.escueladidactica.com/navidad/2022&t=" target="_blank"><img src="img/sharedFacebook.png" title="Compartir con Facebook"></a>
@@ -73,6 +81,7 @@
             <div class="linkcopy">Link copiado</div>
         </div>
         <div id="tablero">
+             <!--Divs de cada carta donde .carta viene siendo el abuelo .padre el padre y sus hijos front_card y back_card-->
         <div class="carta">
             <div class="padre none cart0">
                 <div class="front_card"><img src="img/tarjeta_cubierta.png"></div>
@@ -157,6 +166,7 @@
                 <div class="back_card"></div>
             </div>
         </div>  
+       
         <div class="carta">
             <div class="padre none cart14">
                 <div class="front_card"><img src="img/tarjeta_cubierta.png"></div>
@@ -171,6 +181,7 @@
         </div>  
         </div>
     </section>
+    <!--Cuando se active el responsive se activa este contenedor con las redes del anterior pero en diferente posición-->
     <div class="redes_responsives">
         Compartir&#160&#160<a href="https://twitter.com/intent/tweet?text=&url=https://www.escueladidactica.com/navidad/2022" target="_blank"><img src="img/sharedTwitter.png" title="Compartir con Twitter"></a>
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.escueladidactica.com/navidad/2022&t=" target="_blank"><img src="img/sharedFacebook.png" title="Compartir con Facebook"></a>
@@ -182,6 +193,7 @@
     <div class="footer_left_responsive">
         Somos&#160&#160<img src="img/logoEscuelDidactica.png" class="img_logo">y te ayudamos a transformar el aprendizaje en experiencias memorables.
     </div> 
+    <!--Footer donde esta el logo de escuela didactica y algunas redes para seguir la pagina al lado contrario-->
     <footer>      
         <div class="footer_left">Somos&#160&#160<img src="img/logoEscuelDidactica.png" class="img_logo">y te ayudamos a transformar el aprendizaje en experiencias memorables.</div>
         <div class="redes_footer">Siguenos&#160&#160
@@ -191,7 +203,7 @@
             <a href="https://www.escueladidactica.com/contactanos/" target="_blank" class="bottom_contact">Contáctanos</a>
         </div>
     </footer>
-
+<!--Scripts-->
     <script src="JavaScript.js"></script>
 </body>
 </html>

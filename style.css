@@ -1,3 +1,9 @@
+/*
+Author: Ing(c) Daniel Rico Palacio
+primer Bootcamp "piscina-42" UTP sobre fullstack
+Date:2023-01-13
+Technologic University of Pereira
+*/
 *{
     padding: 0;
     margin: 0;
@@ -15,12 +21,12 @@
     background-color: rgba(0, 0, 0, 0.562);
     z-index: 10;
 }
-
+/*definicio del tamaño y animacion de la imagen que contiene el containerIntro*/
 .containerIntro img{
     width: 35%;
     animation: growImg 2.5s forwards ;
 }
-
+/*Animacion de interescalado de la imagen del intro*/
 @keyframes growImg {
     20%{
         width: 35.9%;
@@ -39,6 +45,7 @@
     }
 }
 
+/*Definicion del boton para cerrar el containerIntro*/
 .containerIntro .start_buttom{
     width: 15%;
     height: 70px;
@@ -61,7 +68,9 @@ body{
     overflow:hidden;
 }
 
-@media (max-width: 700px) {
+/*Responsive para escalar la imagen a diferente resolucion con una animacion diferente de
+acuerdo a su tamaño.*/
+@media (max-width: 800px) {
     .containerIntro .start_buttom{
         width: 65%;
     }
@@ -73,6 +82,7 @@ body{
         width: 100%;
         height: 100%;
     }
+    /*Animacion de intercalado cuando se activa el responsive*/
     @keyframes growImgSmall {
         20%{
             width: 86.2%;
@@ -100,6 +110,7 @@ header{
     align-items: stretch;
 }
 
+/*Definicion del contenedor del logo en la esquina superior izquierda donde se guardael logo de escuela didactica*/
 .logo{
     display: flex;
     float: left;
@@ -108,10 +119,12 @@ header{
     align-items: center;
     padding: 15px;
 }
-
+/*Tamaño que la imagen va a tomar respecto al contenedor .logo*/
 .logo img{
     width: 90%;
 }
+
+/*Contenedor del texto arriba a superior derecha*/
 .text_header{
     height: 100%;
     display: flex;
@@ -123,6 +136,7 @@ header{
     background-color: rgb(230, 249, 244);
 }
 
+/*Definicion del estilo del  cuerpo del texto del contenedor .text_header*/
 .text_header .body_text{
     padding-top: 10px;
     font-size: 20px;
@@ -130,7 +144,7 @@ header{
     max-width: 1150px;
     margin-right: auto;
 }
-
+/*Definicion del estilo del  cuerpo del texto del contenedor .title_header*/
 .text_header .title_text{
     font-size: 35px;
     line-height: 1.2;
@@ -138,6 +152,7 @@ header{
     color: #5fa3a5;
 }
 
+/*Responsive para que el .logo pase a arriba del .text_header y a su vez aumente su tamaño*/
 @media (max-width: 800px) {
     header {
       display: inline;
@@ -151,6 +166,7 @@ header{
   }
 
 /*BODY*/
+/*Definicion del contenedor que va a tener el tablero de juego y demas objetos*/
 .container {
     background: url("img/estrellas-bg.png"),url("img/background.png");
     background-color: #F2D272  ;
@@ -167,16 +183,20 @@ header{
     align-items: center;
 }
 
+/*Definimos el tablero para que siempre realice un arreglo de 4x4*/
 #tablero{
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
     max-width: 800px;
+    min-width: 500px;
     margin: 5%;
     width: 100%;
     height: 100%;
 }
+
+/*Estilo de la carta*/
 #tablero .carta{
     width: 23%;
     height: 23%;
@@ -186,6 +206,7 @@ header{
     perspective: 1000px;
 }
 
+/*Aca definimos la parte la animcacion de destapar una carta conservando su efecto 3d de la rotacion entres sus hijos*/
 #tablero .carta .padre{
     position: relative;
     width: 100%;
@@ -195,6 +216,7 @@ header{
     transform-style: preserve-3d;
 }
 
+/*Animacion para destapar la carta seleccionada*/
 .rotation{
     transform: rotateY(180deg);
 }
@@ -204,6 +226,7 @@ header{
     height: 100%;
 }
 
+/*Efecto para ambos hijos de .carta para esconder la parte de atras de cada una*/
 #tablero .carta .front_card,.back_card{
     width: 100%;
     height: 100%;
@@ -214,6 +237,7 @@ header{
     background-color: transparent;
 }
 
+/*Animacion que se efectua cuando se da click para que la carta de atras pase a adelante*/
 #tablero .carta .back_card{
     margin-top: -100%;
     background-color: transparent;
@@ -226,6 +250,7 @@ img{
     vertical-align: middle;
 }
 
+/*Definicion del contenedor de las redes*/
 .redes{
     left: 0;
     bottom: 40.7%;
@@ -266,6 +291,7 @@ img{
     display: none;
 }
 
+/*Este estilo lo usamos para el letrero que aparece cuando seleccionamos el boton de compartir el link*/
 .container .redes .active{
     display: inline;
     user-select: none;
@@ -277,7 +303,8 @@ img{
     border-radius: 10px;
 }
 
-@media(max-width: 700px) {
+/*Cuando la resolucion es menor de 800px desactivamos el contenedor de las redes dentro de .container*/
+@media(max-width: 800px) {
     body{
         min-height: 400px;
         overflow-x: hidden;
@@ -296,6 +323,8 @@ footer{
     position: fixed;
     background-color: rgb(230, 249, 244);
 }
+
+/*El footer_left es la parte de abajo a la izquierda donde definimos un tamaño de imagen con un max-width para que no tenga un escalado excesivo cuando la resolucion crece mucho*/
 footer .footer_left{
     float: left;
     width: 50%;
@@ -331,7 +360,8 @@ footer .redes_footer a:hover{
 .footer_left_responsive{
     display: none;
 }
-@media (max-width: 700px) {
+/*Cuando la resolucion disminuya se activara el contenedor de .redes_responsive que traera las redes pero en una diferente posicion en la pantalla*/
+@media (max-width: 800px) {
     footer{
         display: none;
         height: 7%;
