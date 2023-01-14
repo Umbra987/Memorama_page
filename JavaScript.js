@@ -372,7 +372,6 @@ Again.addEventListener("click",()=>{
 //Asignamos el evento de copiar el link a los diferentes botones que permiten copiar el link en la pagian
 let btncopiar = document.getElementsByClassName("copiar");
 for(var i=0;i<btncopiar.length;i++){
-console.log("hola");
 btncopiar[i].addEventListener('click',()=>{     
    navigator.clipboard.writeText("https://www.escueladidactica.com/navidad/2022/");
 });
