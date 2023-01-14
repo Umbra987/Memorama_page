@@ -54,7 +54,7 @@ Apartir de la "cadena_pos_imagenes",sus valores son distribuidos de manera aleat
 donde cada valor esta dubplicado ya que como son pareja ,se necesitan dos imagenes de cada carta
 y deacuerdo al valor se asignara una o otra carta a cada espacio.
 */
-var cadena_pos_imagenes=[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
+var cadena_pos_imaganes =[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
 var cadena = ['X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X'];
 function mezclador_tarjetas(a){ 
       random = Math.floor(Math.random()*16);
@@ -159,16 +159,7 @@ function CartUp(valor){
          click2=valor;
          document.querySelector(".cart"+valor).classList.add("rotation");
          setTimeout(()=>{verificar();},600);
-      }//fin if
-      else if(click1==valor){
-         click1,click2=null;
-         contClick=1;
-      }//fin if
-      else{
-         click1,click2=null;
-         contClick=1;
-         document.querySelector(".cart"+valor).classList.remove("rotation");
-      }//fin else
+      }//fin if;
    }//fin else
    }//fin function
 /*    
