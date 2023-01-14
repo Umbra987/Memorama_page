@@ -54,9 +54,8 @@ Apartir de la "cadena_pos_imagenes",sus valores son distribuidos de manera aleat
 donde cada valor esta dubplicado ya que como son pareja ,se necesitan dos imagenes de cada carta
 y deacuerdo al valor se asignara una o otra carta a cada espacio.
 */
-var cadena=[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
-cadena.sort((a,b)=>Math.random()-0.5);
-/*
+var cadena_pos_imagenes=[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
+var cadena = ['X','X','X','X','X','X','X','X','X','X','X','X','X','X','X','X'];
 function mezclador_tarjetas(a){ 
       random = Math.floor(Math.random()*16);
       if(a<16){
@@ -69,7 +68,6 @@ function mezclador_tarjetas(a){
          }//fin if
 }
 mezclador_tarjetas(0);
-*/
 /*
 Creacion del tablero al insertar img a los diferentes hijos donde la carta front_card 
 tendra la tarjeta cubierta y la  carta back_card tendra la carta descubierta.
