@@ -10,10 +10,13 @@ window.onbeforeunload = function (){window.scrollTo(0,0);}
 Esta funcion flecha lo que hace es que nos va a servir  para reproducir ciertos audios que son necesarios
 dependiendo de lo que suceda en el juego por ejemplo el audio de una pareja o el audio del final.
 */
+let music;
 const playAudio = (string) => {
    music = new Audio('Audio/' + string + '.mp3')
    music.play();
 };
+
+
 //Impresion del letrero de "Link copiado" al presionar el boton añadiendo o removiendo la clase activo
 let copiarlink = document.querySelector(".bottom_copy");
 let textcopiar =  document.querySelector(".linkcopy");
@@ -75,22 +78,6 @@ function createTab(){
    }
 }
 createTab();
-
-/*
-function MostarTablero(){
-   
-   for(var i=0;i<16;i++){
-      let cartaMostrar = document.querySelector(".cart" + i);
-      setTimeout(() => {
-         cartaMostrar.classList.toggle("none");
-      },200 + (150*i));
-      
-      setTimeout(() => {
-         cartaMostrar.classList.add("cardAnimation");
-      },200 + (150*i));
-   }
-}
-*/
 //  Tablero de cartas
 let carta0 = document.querySelector(".cart0");
 let carta1 = document.querySelector(".cart1");
@@ -110,7 +97,16 @@ let carta14 = document.querySelector(".cart14");
 let carta15 = document.querySelector(".cart15");
 
 //Asignacion de valor del click respecto a la carta seleccionada.
-//pendiente documentar
+/* 
+   En esta parte del codigo lo que se hace es a cada carta se le agrega un 
+   evento de 'click',pero se le agrega de una manera especial ya que si agregamos
+   el evento de manera "carta0.addEventListener('click',CartUp(0));" lo que pasa
+   es que no se espera a escuchar el evento sino que ejecuta la función por eso agregamos el 
+   evento de la manera "cart0.addEventListener('click',()=>{CartUp(0);});" con una función
+   flecha ya que al hacer esto el evento espera a escuchar el 'click' y luego ejecuta lo que
+   hay dentro de la función fecha que es la función 'CartUp()' con el valor que necesitemos
+   para referenciar la posición de la carta en la cual se hizo click.
+*/
 carta0.addEventListener('click',()=>{CartUp(0);});
 carta1.addEventListener('click',()=>{CartUp(1);});
 carta2.addEventListener('click',()=>{CartUp(2);});
@@ -189,6 +185,7 @@ function CartUp(valor){
    let titleText = document.querySelector(".titleText");
 function verificar(){
    if(parejas==7){
+      music.pause();
       playAudio('correcta');
          window.scroll(0,0);
          cuerpo.style.overflow="hidden";
@@ -206,6 +203,7 @@ function verificar(){
    else if(parejas<7){
       onclik=false;
       if(cadena[click1] == cadena[click2]){
+         music.pause();
          playAudio('correcta');
          window.scroll(0,0);
          cuerpo.style.overflow="hidden";
@@ -220,6 +218,7 @@ function verificar(){
       },300);
       }//fin if
       else{
+         music.pause();
          playAudio('incorrecta');
             document.querySelector(".cart"+click1).classList.remove("rotation");
             document.querySelector(".cart"+click2).classList.remove("rotation");
@@ -249,6 +248,7 @@ permite añadir una clase al div del pesebre y con esa clase desactivarlo
 let Pesebre = document.querySelector(".containerPesebre");
 let btnContinuar = document.querySelector(".Pesebre_buttom");
 btnContinuar.addEventListener("click",()=>{
+   music.pause();
    cuerpo.style.overflow="visible";
    Pesebre.classList.add("nonePesebre");
 });
@@ -263,7 +263,7 @@ btnContinuar.addEventListener("click",()=>{
 6=Pastor
 7=La mula y el buey
 
-de acuerdo al valor se es seleccionado un caso donde con un "innerHTML" se le inserta un objeto HTML
+De acuerdo al valor se es seleccionado un caso donde con un "innerHTML" se le inserta un objeto HTML
 con etiqueta de parrafo y adentro de el su texto correspondiente,luego se reproduce el audio para cada
 pareja de cartas,lo siguiente es añadir la clase que tiene la animación de desaparecer y ya que cada animacion
 dura 2.5s se pone un setTimeout para esperar el mismo tiempo y final mente con display="none" desaparecer el sticker
@@ -274,6 +274,7 @@ function parejaFind(valor){
    switch(valor){
       case 0: {
          bodyText.innerHTML="<p>La primera celebración navideña en la que se monto un pesebre para la conmemoración del nacimiento de Jesus,fue en la noche buena del año 1223,realizada por San Francisco de Asís.</p>";
+         music.pause();
          playAudio('pareja1');
          document.querySelector('.maria').classList.add("animationActive");
          setTimeout(()=>{document.querySelector('.maria').style.display="none";},3400);
@@ -282,8 +283,8 @@ function parejaFind(valor){
       }
       break;
       case 1: {
-         console.log("Jose");
          bodyText.innerHTML="<p>En Ecuador,Mexico,Colombia,Guatemala,El Salvador,Venezuela,Perú,Argentina,Chile y Canarias,la figura del niño Jesus se coloca después de la llegada de la navidad.</p>";
+         music.pause();
          playAudio('pareja2');
          document.querySelector('.jose').classList.add("animationActive");
          setTimeout(()=>{document.querySelector('.jose').style.display="none";},3400);
@@ -293,6 +294,7 @@ function parejaFind(valor){
       break;
       case 2: {
          bodyText.innerHTML="<p>El villancico es un genero de cancion cuya letra hace referencia a la navidad.</p>";
+         music.pause();
          playAudio('pareja3');
          document.querySelector('.jesus').classList.add("animationActive");
          setTimeout(()=>{document.querySelector('.jesus').style.display="none";},3400);
@@ -302,6 +304,7 @@ function parejaFind(valor){
       break;
       case 3: {
          bodyText.innerHTML="<p>El villancico es un genero de cancion cuya letra hace referencia a la navidad.</p>";
+         music.pause();
          playAudio('pareja4');
          document.querySelector('.melchor').classList.add("animationActive");
          setTimeout(()=>{document.querySelector('.melchor').style.display="none";},3400);
@@ -311,6 +314,7 @@ function parejaFind(valor){
       break;
       case 4: {
          bodyText.innerHTML="<p>La palabra Tutaina es utilizada en Perú para referirse coloquialmente a una fiesta pequeña,por lo que el titulo de este villancico se refiere a la celebración de la tradicional novena de aguinaldos.</p>";
+         music.pause();
          playAudio('pareja5');
          document.querySelector('.gaspar').classList.add("animationActive");
          setTimeout(()=>{document.querySelector('.gaspar').style.display="none";},3400);
@@ -320,6 +324,7 @@ function parejaFind(valor){
       break;
       case 5: {
          bodyText.innerHTML="<p>A la nanita nana es un villancico compuesto por Geremías Quintero,oriundo de barbacoas,Nariño.</p>";
+         music.pause();
          playAudio('pareja6');
          document.querySelector('.baltazar').classList.add("animationActive");
          setTimeout(()=>{document.querySelector('.baltazar').style.display="none";},3400);
@@ -329,6 +334,7 @@ function parejaFind(valor){
       break;
       case 6: {
          bodyText.innerHTML="<p>A las novenas se les llama \"Las Posadas\" y son fiestas populares en Mexico,Honduras,Guatemala,El Salvador,Costa Rica,Nicaragua y Panamá.</p>";
+         music.pause();
          playAudio('pareja7');
          document.querySelector('.pastor').classList.add("animationActive");
          setTimeout(()=>{document.querySelector('.pastor').style.display="none";},3400);
@@ -338,6 +344,7 @@ function parejaFind(valor){
       break;
       case 7: {
          bodyText.innerHTML="<p>En las posadas cada uno de los nueve dias representa un valor,como humildad,fortaleza,desapego,caridad,confianza,justicia,pureza,alegria y generosidad.</p>";
+         music.pause();
          playAudio('pareja8');
          document.querySelector('.mulaBuey').classList.add("animationActive");
          setTimeout(()=>{document.querySelector('.mulaBuey').style.display="none";},3400);
@@ -354,9 +361,12 @@ haciendo que su display se encienda.
 */
 let finalizar = document.querySelector(".finalizar");
 finalizar.addEventListener("click",()=>{
+   music.pause();
+   playAudio('final');
    titleText.innerHTML="<h2>Armaste tu pesebre</h2>";
    document.querySelector(".reset").classList.remove("noneFinal");
    document.querySelector(".bodyText_Final").classList.remove("noneFinal");
+   document.querySelector(".footer_final").classList.remove("noneFinal");
    bodyText.style.display="none";
    finalizar.style.display="none";
 });
